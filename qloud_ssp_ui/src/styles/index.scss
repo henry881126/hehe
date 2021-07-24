@@ -1,0 +1,137 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  min-width: 768px;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+.downBtn{
+  /*border: 1px solid #ccc;*/
+  position: absolute;
+  top:1px;
+  right:10px;
+  padding:0 5px;
+  cursor: pointer;
+}
+.downBtn:hover{
+  color: #409EFF;
+}
+.searchBox{
+  border: 1px solid #DCDFE6;
+  position: absolute;
+  top:38px;
+  right:0;
+  width:100%;
+  z-index:191;
+  border-radius: 4px;
+  max-height:300px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.searchBox ul{
+  list-style: none;
+  padding:0 10px;
+  color: #606266;
+}
+.searchBox ul li{
+  color: #2D2F33;
+  height: 41px;
+  line-height: 41px;
+  padding-left:10px;
+  padding-right:10px;
+  font-size:14px;
+  white-space: nowrap;
+  border-radius: 2px;
+  user-select:none;
+}
+.searchBox ul li.selected,
+.searchBox ul li:hover{
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+
+//美化滚动条
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

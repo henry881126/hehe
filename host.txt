@@ -1,0 +1,92 @@
+192.168.137.110 www.rancher.local
+
+192.168.137.110 www.rancher.zteye
+
+192.168.137.101 consul1.default.zteye
+
+0.0.0.0 account.jetbrains.com
+0.0.0.0 www.jetbrains.com
+0.0.0.0 fls.jetbrains-agent.com
+
+10.12.0.155 qloudconsul.service.corp
+10.12.0.155 qmsauthn.service.corp
+10.12.0.155 qlouddop.service.corp
+
+192.168.137.102 user.host.com
+
+# 本地测试环境  
+192.168.137.100   pig-mysql
+192.168.137.100   pig-redis
+192.168.137.100   pig-gateway
+192.168.137.100   pig-register
+
+10.12.0.155 qloudconsul.service.corp
+10.12.0.155 qmsauthn.service.corp
+10.12.0.155 qlouddop.service.corp
+
+192.168.2.42 nexus.service.sd
+192.168.137.200 qloudredis.paas
+192.168.137.200 qloudmariadb.paas
+
+192.168.2.20  reg.qloudhub.com
+192.168.2.42 qlouddop.service.rd 
+192.168.2.42 yapi.service.rd
+192.168.2.42 yapi.tool.service.rd
+192.168.2.42 nacos.dap.service.sd
+
+192.168.2.42 nacos.service.rd
+127.0.0.1 nacos.dap
+
+192.168.2.42 qms-dap-user-center.service.sd
+192.168.2.42 qloud-dap-admin.service.sd
+192.168.2.42 qms-dap-gateway.service.sd
+192.168.2.42 qms-dap-springboot-admin.service.sd
+192.168.2.42 sentinel-dashboard.service.sd
+192.168.2.42 elasticsearch.service.sd
+192.168.2.42 kibana.service.sd
+192.168.2.42 qloudmnt.qloudobp.service.sd
+
+192.168.2.42 jenkins.dap-demo.service.sd
+
+192.168.2.42 es-head.tool.service.sd
+192.168.2.42 es.tool.service.sd
+192.168.2.42 kibana.tool.service.sd
+192.168.2.42 qloudminio.paas.service.sd
+
+
+#192.168.2.42 qms-dap-user-center.service.sd
+#127.0.0.1 qloud-dap-admin.service.sd
+#127.0.0.1 qms-dap-gateway.service.sd
+192.168.2.42 qloud-dap-admin.dap.service.sd
+192.168.2.42 qms-dap-gateway.dap.service.sd
+192.168.2.42 qms-dap-uaa.dap.service.sd
+192.168.2.42 qms-dap-springboot-admin.dap-demo.service.sd
+192.168.2.42 qms-dap-springboot-admin.dap.service.sd
+192.168.2.42 qms-dap-springboot-admin.demo.service.sd
+192.168.2.42 qms-dap-user-center.dap.service.sd
+192.168.2.42 qms-dap-code-generator.dap.service.sd
+192.168.2.42 qms-dap-demo.dap-demo.service.sd
+192.168.2.42 qui-obp-service.dap.service.sd
+192.168.2.42 qui-obp-service.qloudobp.service.sd
+192.168.2.42 qui-dap-service.dap.service.sd
+192.168.2.42 qms-dap-job-admin.dap.dap.service.sd
+192.168.2.42 sentinel-dashboard.dap.service.sd
+192.168.2.42  qui-dap-admin.dap.service.sd
+192.168.2.42  qui-dap-admin.dap-sit.service.sd
+192.168.2.42 qms-dap-sentinel.dap.service.sd
+192.168.2.42 qui-obp-admin.qloudobp.service.sd
+
+
+192.168.2.43 qms-obp-pep.qloudobp.service.sd
+
+192.168.2.43 qms-obp-quickstartsmock.qloudobp.service.sd
+
+192.168.2.42 qms-obp-pdp.qloudobp.service.sd
+
+
+# Added by Docker Desktop
+192.168.11.70 host.docker.internal
+192.168.11.70 gateway.docker.internal
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section

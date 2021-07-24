@@ -1,0 +1,14 @@
+apiVersion: v1
+appVersion: 1.0.0
+description: qui-dap-admin .
+home: http://www.qloudpaas.com
+icon: http://mart.csftgroup.com:30024/images/icon/qloudmonitor.jpg
+keywords:
+- qui-dap-admin
+maintainers:
+- email: sre@gcstgroup.com
+  name: sre
+name: qui-dap-admin
+sources:
+- http://www.qloudpaas.com
+version: 1.0.0

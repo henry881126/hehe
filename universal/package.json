@@ -1,0 +1,32 @@
+{
+  "name": "universal2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "connect-multiparty": "^2.2.0",
+    "cookie-parser": "~1.4.3",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.2",
+    "fs": "0.0.1-security",
+    "log4js": "^2.7.0",
+    "node-yaml": "^3.1.1",
+    "passport": "^0.4.0",
+    "passport-openidconnect": "0.0.2",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "shelljs": "^0.8.3",
+    "socket.io": "^2.1.1",
+    "sync-request": "^6.1.0"
+  }
+}

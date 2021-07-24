@@ -1,0 +1,21 @@
+{
+  "port": "8080",
+  "topic": "Qloudbus.Configuration",
+  "qmsPartic2": "http://qms-obp-partic.qloudobp.service.sd",
+  "qmsPartic": "http://qms-dap-gateway.dap:9900/partic",
+
+
+  "aggregator1": "http://192.168.11.70:7300/mock/5e9811bfbbd45420287956a2/apiproxy",
+  "aggregator": "http://qms-dap-gateway.dap:9900/mnt",
+
+
+  "aggregator_poc": "http://qloudmnt.shdpoc.service.sd",
+  "qmsobpmock": "http://qmsobpmock.pditdap.service.sd",
+  "pdpurl": "http://pdp7.pditdap.service.sd",
+  "oauth": "http://qms-dap-gateway.dap:9900",
+  "auth":"http://qms-dap-gateway.dap.service.sd",
+  "superUser": "admin",
+  "GeneralManager": "obp_admin",
+  "Permissions": "AllObpPermissions",
+  "application": "obpui3"
+}

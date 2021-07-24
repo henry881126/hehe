@@ -1,0 +1,162 @@
+#【----------------全局变量--------------------】
+global:
+  #  # 镜像仓库名称
+  imageRepositoryName: reg.qloudhub.com
+
+#【----------------镜像配置--------------------】
+# 镜像
+imageRepository: dap/qui-dap-admin
+  #版本要求3位数,不写默认从.Chart.appVersion拿
+#imageTag: 5.6.10
+  # 拉取镜像策略s
+imagePullPolicy: Always
+
+#容器启动命令和参数
+containersCommand: {}
+containersArgs: {}
+
+#【----------------服务配置--------------------】
+#是否启动服务
+serviceEnabled: true
+  # 服务映射端口类型ClusterIP、NodePort
+serviceType: ClusterIP
+  # 服务
+serviceName: qui-dap-admin
+servicePorts:
+# 容器内端口
+
+
+- port: 8080
+  protocol: "TCP"
+
+
+
+#【----------------部署配置--------------------】
+# 部署实例个数
+deploymentReplicas: 1
+deploymentPorts:
+# 容器内端口,protocol协议不写，默认TCP
+
+- containerPort: 8080
+  protocol: "TCP"
+
+
+
+#【----------------环境变量--------------------】
+#当env的某个环境变量需要加密处理时，需要在下面的envsecret配置，不用再env中配置了
+#env:
+#  spring.cloud.nacos.server-addr: "nacos.dap"
+ # spring.profiles.active: "dit"
+
+#通用环境变量，key=SERVICE_CLUSTER,value由服务名+命名空间组成
+#envcommon: SERVICE_CLUSTER
+
+#【----------------secret配置--------------------】
+#1、目前只支持生成一个secret
+
+  #是否使用secret，false为不使用,envname为环境变量名字
+envsecretEnabled: false
+
+#【----------------设置容器是否运行在特权模式--------------------】
+#仅应用到指定的容器
+securityContext: false
+
+# 信任根证书
+
+
+
+
+#【----------------持久卷--------------------】
+#  Persistent Volume Storage Class
+#1、pvc配置,主要配置pv的名称（和创建的pv名字相同）
+#2、pvc名字自动生成，为服务名-name
+#是否已经存在pvc，存在则不创建,configMap不需要生成pvc
+persistenceExistingClaim: false
+
+#是否使用持久卷，false为不使用
+persistenceEnabled: false
+
+
+persistenceAnnotations:
+  volume.beta.kubernetes.io/storage-class: sas
+  volume.beta.kubernetes.io/storage-provisioner: flexvolume-huawei.com/fuxivol
+persistenceLabels:
+  failure-domain.beta.kubernetes.io/region: cn-north-1
+  failure-domain.beta.kubernetes.io/zone: cn-north-1a
+
+    
+#挂载卷时需要配置，mountPath为pod容器中的目录,type为存储类型：secret、gluster、configMap
+#1、注意此处如果type是configMap，配置的name名字要和下方的configMap一样
+#2、增加items代表一个configMap对应对个配置文件并且可以设置权限，如果不需要可以不加此项
+
+volumeMounts:
+
+
+
+
+
+
+
+volume:
+
+
+
+
+
+
+
+
+
+#【----------------暴露http服务的方式:ingress----在service 之前加了一层ingress----------------】
+
+ingressEnabled: true
+
+
+
+ingressAnnotations:
+  nginx.ingress.kubernetes.io/ssl-passthrough: "false"
+  nginx.ingress.kubernetes.io/proxy-body-size: "1m"
+  nginx.ingress.kubernetes.io/proxy-buffering: "off"
+  nginx.ingress.kubernetes.io/proxy-buffer-size: "4k"
+  nginx.ingress.kubernetes.io/proxy-connect-timeout: "5"
+  nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+  nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+
+
+
+ingressAddns: true
+
+
+#ingress对应的端口
+
+ingressHosts:
+- host: qui-dap-admin
+  domain: service.sd
+  paths:
+  - path:
+    servicePort: 8080
+
+
+
+#【-----------------请求资源限制-------------------】
+resourcesRequestsCpu: 0.5
+resourcesRequestsMemory: 0.5Gi
+resourcesLimitsCpu: 1
+resourcesLimitsMemory: 1Gi
+
+nodeSelector: {}
+
+#【-----------------初始化容器-------------------】
+#此服务是否需要依赖其他服务,如果是的话，需要配置enabled:true,且需要配置image、command：command为相应的等待命令,image为init容器镜像
+#默认等待同一命名空间的服务
+initContainersEnabled: false
+# initContainersImage: "qloudpaas/alpine-curl-jq:1.0.0"
+# initContainersCommand: "until (nc -w 3 qloudkernel:8888 -z) ;do sleep 120; done"
+
+#【-----------------健康检查 K8S提供livenessProbe来检测应用程序是否正常运行，并且对相应状况进行相应的补救措施-------------------】
+#此处保留原来的样式，易读性更佳
+livenessProbe:
+  enabled: false
+#在没有配置readinessProbe的资源对象中，pod中的容器启动完成后，就认为pod中的应用程序可以对外提供服务，有时一些应用程序启动后，需要较长时间的加载才能对外服务
+readinessProbe:
+  enabled: false
